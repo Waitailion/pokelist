@@ -1,0 +1,79 @@
+
+
+
+.card_container {
+    width: 35vw;
+    height: 75vh;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease-out;
+    text-decoration: none;
+    background-color: rgba(168,195,179,0.5)    ;
+    margin-bottom: 20px;
+}
+
+.card_container:hover {
+    transform: translateY(-5px) scale(1.005) translateZ(0);
+    box-shadow: 0 24px 36px #e8e7ea	, 0 24px 46px;
+}
+
+
+.card_container:hover  .pokemon_name {
+    color: #fff2ec;
+    font-size: 3em;
+    transition: all 0.3s ease-out;
+    transform: translateY(-10px) scale(1.005) translateZ(0);
+
+    
+}
+
+.card_container:hover  .pokemon_id {
+    color: #fff2ec;
+    font-size: 3em;
+    transition: all 0.3s ease-out;
+    transform: translateY(50px) scale(1.005) translateZ(0);
+
+    
+}
+
+
+
+.card_container h5 {
+    text-align: center;
+    font-size: 2em;
+    color: #305354;
+    margin-top: 30px;
+    
+    transition: color 0.3s ease-out;
+}
+
+.pokemon_img {
+    width: 250px ;
+    height: auto;
+    border-radius: 20%;
+    background: #fff;
+    border: 2px solid var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-out;
+}
+
+
+
+
+
+.card_container:hover .pokemon_img {
+    background: var(--bg-color);
+    width: 350px;
+    height:auto;
+    transition: all 0.3s ease-out;
+
+}
+
+

@@ -1,0 +1,89 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+
+
+body {
+  background-image: url(pokeback3.png);
+    font-family: "Roboto", sans-serif;
+}
+
+.card_container {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  background-color: #FFF;
+  -webkit-box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+}
+.card_container:hover {
+    transform: translateY(-5px) scale(1.005) translateZ(0);
+    box-shadow: 0 24px 36px #e8e7ea	, 0 24px 46px;
+    transition: all 0.3s ease-out;
+
+}
+
+.card_container:hover  .pokemon_nam {
+    color:#353B3F;
+    font-size: 3em;
+    transition: all 0.3s ease-out;
+    transform: translateY(10px) scale(1.005) translateZ(0);
+    z-index: 1;
+
+    
+}
+.card_container:hover  .pokemon_id {
+    color: #353B3F;
+    font-size: 3em;
+    transition: all 0.5s ease-out;
+    transform: translateY(10px) scale(1.005) translateZ(0);
+    z-index: -1;
+
+    
+}
+
+
+.pokemon_img {
+    
+	height: 100%;
+	width: auto;
+	-webkit-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    transition: all 0.3s ease-out;
+
+  
+}
+.card_container:hover .pokemon_img {
+    background: var(--bg-color);
+    width: 450px;
+    height:auto;
+    transition: all 0.3s ease-out;
+
+}
+
+
+.pokemon_nam {
+    padding-top: 150px;
+  font-size: 3rem;
+  color: #4B4B4B;
+  -webkit-text-stroke-width: 0.5px; 
+  -webkit-text-stroke-color: white;
+  z-index: 5;
+}
+
+
+.pokemon_id {
+    -webkit-text-stroke-width: 0.5px; 
+    -webkit-text-stroke-color: white;
+  position: absolute;
+  left: 30px;
+  top: -50px;
+  font-size: 3rem;
+  color: #4B4B4B;
+  z-index: 1;
+}
+
+
+
