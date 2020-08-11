@@ -17,7 +17,7 @@ export default class PokeList extends Component {
  
 
     state = {
-        url: `https://pokeapi.co/api/v2/pokemon/?limit=100`,
+        url: `https://pokeapi.co/api/v2/pokemon/?limit=900`,
         pokemon: null
     };
     

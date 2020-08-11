@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios";
 import './Pokemon.scss'
+import {Router, Route, Link} from "react-router-dom"
 
 const TYPE_COLOR = {
     bug: 'B1C12E',
@@ -17,7 +18,7 @@ const TYPE_COLOR = {
     ice:'A3E7FD',
     normal:'C8C4BC',
     poison:'934594',
-    pyschic:'ED4882',
+    psychic:'ED4882',
     rock:'B9A156',
     steel:'B5B5C3',
     water:'3295F6',
@@ -58,7 +59,7 @@ export default class Pokemon extends Component {
         const pokemonSpe= await axios.get(pokemonSpUrl);
 
 
-        const name = pokemonSpe.data.names.[0].name;
+        const name = pokemonSpe.data.names.[6].name;
 
 
 
@@ -128,7 +129,7 @@ export default class Pokemon extends Component {
             let description = '';
 
             res.data.flavor_text_entries.some(flavor => {
-                if (flavor.language.name === 'ja') {
+                if (flavor.language.name === 'en') {
                     description = flavor.flavor_text;
                     return;
                 }
@@ -213,18 +214,31 @@ export default class Pokemon extends Component {
 
                                 <div className="separator"></div>
                                     <p className="pokemon_description">{this.state.description }</p>
-                        </div>
 
                             <h5 className='pokemon_id_num'>{this.state.pokemonId}</h5>
-                            <h6 className="pokemon_number">Number</h6>
 
-                            <ul >
-                              <li  >HP:  {this.state.stats.hp}</li>
-                              <li >Atk:  {this.state.stats.attack}</li>
-                              <li  >Def:  {this.state.stats.defense}</li>
-                              <li  >Height:  {this.state.height}cm</li>
-                            </ul>
-                           
+                            <div className="container" >
+                                <h6 className="stat_name">HP</h6>
+                                <div class="progress1 progress-moved">    
+                                 <div className="progress-bar1" style={{width:`${this.state.stats.hp}%`}} ></div>
+                                </div>
+                             </div>
+
+                             <div className="container" >
+                                 <h6 className="stat_name">Speed</h6>
+                                <div class="progress2 progress-moved">    
+                                 <div className="progress-bar2" style={{width:`${this.state.stats.speed}%`}} ></div>
+                                </div>
+                             </div>
+                             
+                             <div className="container" >
+                                 <h6 className="stat_name">Defense</h6>
+                                <div class="progress3 progress-moved">    
+                                 <div className="progress-bar3" style={{width:`${this.state.stats.defense}%`}} ></div>
+                                </div>
+                             </div>
+
+                        </div>
             </div>
             
            
