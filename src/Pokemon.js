@@ -51,6 +51,7 @@ export default class Pokemon extends Component {
         const pokemonUrl= `https://pokeapi.co/api/v2/pokemon/${pokemonId}/`;
         const pokemonSpUrl=`https://pokeapi.co/api/v2/pokemon-species/${pokemonId}/`;
         const imageUrl = `https://pokeres.bastionbot.org/images/pokemon/${pokemonId}.png`;
+        const altImg = `https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/${pokemonId}.png?raw=true`
  
     
         const pokemonRes= await axios.get(pokemonUrl);
@@ -170,6 +171,7 @@ export default class Pokemon extends Component {
 
         this.setState({
             imageUrl,
+            altImg,
             pokemonId,
             name,
             types,
@@ -186,6 +188,7 @@ export default class Pokemon extends Component {
             abilities,
             evs,
         });
+        console.log(this.state.altImg)
     }  
     
     render() {
@@ -194,7 +197,7 @@ export default class Pokemon extends Component {
             <div className="card">
 
                 <div className="thumbnail">
-                    <img clasName="left" src = {this.state.imageUrl} />
+                    <img clasName="left" src = {this.state.imageUrl} alt=""/>
                 </div>
 
                         <div className="right">
