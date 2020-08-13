@@ -1,25 +1,24 @@
 import React from 'react';
-import { HashRouter as Router, Route, Switch } from "react-router-dom"
+import { HashRouter as Router, Route, Link, Switch } from "react-router-dom"
 import './App.css';
-import pokelist from "./pokelist";
+import PokeList from "./PokeList";
 import Pokemon from "./Pokemon";
+import Header from "./Header";
+
+
 
 function App() {
     return (
-
+    
         < Router >
-        < Switch >
-        < Route exact path = "/"
-        component = { pokelist }
-        /> 
-        <Route exact path = "/pokemon/:pokemonId"
-        component = { Pokemon }
-        /> 
-        < /
-        Switch >
-
-        <
-        /Router>
+             <Header/>
+            < Switch >
+                < Route exact path = "/" component = { PokeList }/> 
+                < Route exact path = "/page" component = { PokeList }/> 
+                <Route exact path = "/pokemon/:pokemonId" component = { Pokemon }/> 
+            </Switch >
+       </Router>
+       
     );
 }
 

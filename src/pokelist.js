@@ -1,11 +1,7 @@
 import React, {Component} from "react";
-import ReactDom from "react-dom" ;
-import { render } from "@testing-library/react";
 import axios from "axios";
 import PokeCard from "./PokeCard";
-import "./pokelist.scss";
-import Pagination from "./pages";
-import pokemon from "./pokemon.png"; 
+import "./PokeList.scss";
 
 
 
@@ -17,7 +13,7 @@ export default class PokeList extends Component {
  
 
     state = {
-        url: `https://pokeapi.co/api/v2/pokemon/?limit=800`,
+        url: `https://pokeapi.co/api/v2/pokemon/?limit=807`,
         pokemon: null
     };
     
@@ -39,9 +35,7 @@ export default class PokeList extends Component {
 render() {
     return(
         <React.Fragment>
-            <div className="header" >
-                <img className="pokeimg"src={pokemon}/>
-                </div>
+            
             {this.state.pokemon ? (
                 
                 <div className="all_cards">

@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import axios from "axios";
-import './Pokemon.scss'
-import {Router, Route, Link} from "react-router-dom"
+import './Pokemon.scss';
+import { Link} from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faWeightHanging, faRulerVertical } from '@fortawesome/free-solid-svg-icons'
 
 const TYPE_COLOR = {
     bug: 'B1C12E',
@@ -23,6 +25,10 @@ const TYPE_COLOR = {
     steel:'B5B5C3',
     water:'3295F6',
 };
+
+const weightIcon = <FontAwesomeIcon icon={faWeightHanging} />;
+const measureIcon = <FontAwesomeIcon icon={faRulerVertical} />;
+
 
 
 export default class Pokemon extends Component {
@@ -63,7 +69,8 @@ export default class Pokemon extends Component {
         const name = pokemonSpe.data.names.[6].name;
 
 
-
+       
+       
       
 
          let {hp, attack, defense, speed, specialAttack, specialDefense} = '';
@@ -92,10 +99,10 @@ export default class Pokemon extends Component {
         });
     
         const height =
-            Math.round(pokemonRes.data.height * 10);
+            (pokemonRes.data.height / 10);
 
         const weight =
-            Math.round(pokemonRes.data.weight * 10);
+            Math.round(pokemonRes.data.weight / 10);
 
         const types = 
             pokemonRes.data.types.map(type => type.type.name);
@@ -187,26 +194,30 @@ export default class Pokemon extends Component {
             weight,
             abilities,
             evs,
+
+
+
+            
         });
         console.log(this.state.altImg)
     }  
     
     render() {
         return (
-            
+            <>
             <div className="card">
 
                 <div className="thumbnail">
-                    <img clasName="left" src = {this.state.imageUrl} alt=""/>
+                    <img className="pokemon_image_big" src = {this.state.imageUrl} alt=""/>
                 </div>
 
                         <div className="right">
-                                <h1 className
-                                ="pokemon_name">{this.state.name}</h1>
+
+                                <h1 className="pokemon_name_info">{this.state.name}</h1>
                             
                             <div className="type">
                                 {this.state.types.map(type => (
-                                    <h2 className="pokemon_type" key ={type} style={{color: `#${TYPE_COLOR[type]}`}}>
+                                    <h2 className="pokemon_type" key ={type} style={{backgroundColor: `#${TYPE_COLOR[type]}`}}>
                                     {type.toLowerCase()
                                     .split(' ')
                                     .map(s => s.charAt(0).toUpperCase() + s.substring(1))
@@ -216,34 +227,32 @@ export default class Pokemon extends Component {
                             </div>
 
                                 <div className="separator"></div>
+                                <div className="desc_container">
                                     <p className="pokemon_description">{this.state.description }</p>
+                                <div className="icon_container">
+                                    <div>{weightIcon}</div>
+                                    <h6 className="weight_info">{this.state.weight} Kg</h6>
+                                    <div>{measureIcon}</div>
+                                    <h6 className="height_info">{this.state.height} Meters</h6>
+                                    </div>
+                                </div>
+                                <div className="container_hp" >
+                                <h6 className="stat_name">HP</h6>
+                                <div className="progress1 progress-moved">    
+                                 <div className="progress-bar1" style={{width:`${Math.floor(this.state.stats.hp)}px`}} ></div>
+                                 </div>
+                             </div>
 
                             <h5 className='pokemon_id_num'>{this.state.pokemonId}</h5>
-
-                            <div className="container" >
-                                <h6 className="stat_name">HP</h6>
-                                <div class="progress1 progress-moved">    
-                                 <div className="progress-bar1" style={{width:`${this.state.stats.hp}%`}} ></div>
-                                </div>
-                             </div>
-
-                             <div className="container" >
-                                 <h6 className="stat_name">Speed</h6>
-                                <div class="progress2 progress-moved">    
-                                 <div className="progress-bar2" style={{width:`${this.state.stats.speed}%`}} ></div>
-                                </div>
-                             </div>
-                             
-                             <div className="container" >
-                                 <h6 className="stat_name">Defense</h6>
-                                <div class="progress3 progress-moved">    
-                                 <div className="progress-bar3" style={{width:`${this.state.stats.defense}%`}} ></div>
-                                </div>
-                             </div>
-
                         </div>
+                             <div>
+                                    <Link className="arrow arrow_left" to={`/pokemon/${parseInt(this.state.pokemonId)-1}`}></Link>
+                            </div>
+                            <div>
+                                    <Link className="arrow arrow_right" to={`/pokemon/${parseInt(this.state.pokemonId)+1}`}></Link>
+                             </div>
             </div>
-            
+            </>
            
         );
     }

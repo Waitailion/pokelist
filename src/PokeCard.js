@@ -41,22 +41,22 @@ export default class PokeCard extends Component {
 
         < StyledLink to = { `pokemon/${this.state.pokemonId}` } >
       < div className = "card_container" >
-         <div className="img_contain">
-            <img className = "pokemon_img"
+         <div className="card_img_container">
+            <img className = "card_pokemon_img"
             src = { this.state.imageUrl } alt=""/> 
          </div>
             <div className= "pokemon_card_info"> 
-             <h5 className = "pokemon_nam" > {
-                this.state.name
-                .toLowerCase()
-                .split(" ")
-                .map(letter => letter.charAt(0).toUpperCase() + letter.substring(1))
-                .join(' ')
-                 } 
-             </h5> 
              <h4 className="index_tag">Index</h4>
              < h5 className = "pokemon_id">
                   { this.state.pokemonId }
+             </h5> 
+             <h5 className = "pokemon_name_card" > {
+                this.state.name
+                .toLowerCase()
+                .split("-")
+                .map(letter => letter.charAt(0).toUpperCase() + letter.substring(1))
+                .join(' ')
+                 } 
              </h5> 
             </div>
       </div> 
