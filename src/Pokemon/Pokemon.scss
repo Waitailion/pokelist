@@ -2,7 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 
-.card {
+
+
+.card  {
   border-radius: 20px;
   position: relative;
   height: 450px;
@@ -11,9 +13,11 @@
   margin-left: 25% ;
   margin-right: 25%;
   background-color: #FFF;
+
   -webkit-box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
+
 }
 
 .thumbnail {
@@ -78,7 +82,7 @@
   border: 1px solid #C3C3C3;
 }
 .pokemon_description {
-  height: 100px;
+  max-height: 150px;
   font-size: 1rem;
   line-height: 130%;
   color: #4B4B4B;

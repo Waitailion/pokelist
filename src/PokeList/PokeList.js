@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import axios from "axios";
-import PokeCard from "./PokeCard";
+import PokeCard from "../PokeCard/PokeCard";
 import "./PokeList.scss";
 
 
@@ -13,8 +13,9 @@ export default class PokeList extends Component {
  
 
     state = {
-        url: `https://pokeapi.co/api/v2/pokemon/?limit=807`,
+        url: `https://pokeapi.co/api/v2/pokemon?limit=30`,
         pokemon: null
+        
     };
     
   
@@ -22,13 +23,9 @@ export default class PokeList extends Component {
     
     async componentDidMount() {
         const res = await axios.get(this.state.url);
-       
-     
-        this.setState({pokemon: res.data[`results`]})
-        
-        
-        console.log(this);
- }
+        this.setState({pokemon: res.data[`results`]});
+    
+    }
  
 
 
@@ -44,13 +41,14 @@ render() {
                     key={pokemon.name}
                     name={pokemon.name}
                     url={pokemon.url}
-                    
                     />
                     ))}
 
             </div> 
             ) :(
-                <h1>Loading Pokemon</h1>
+                <div>
+                <h1 className="loading_title">Loading Pokemon</h1>
+                </div>
                 )}
            
         </React.Fragment>

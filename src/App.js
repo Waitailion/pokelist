@@ -1,9 +1,9 @@
 import React from 'react';
-import { HashRouter as Router, Route, Link, Switch } from "react-router-dom"
+import { HashRouter as Router, Route,  Switch } from "react-router-dom"
 import './App.css';
-import PokeList from "./PokeList";
-import Pokemon from "./Pokemon";
-import Header from "./Header";
+import PokeList from "./PokeList/PokeList";
+import Pokemon from "./Pokemon/Pokemon";
+import Header from "./Header/Header";
 
 
 

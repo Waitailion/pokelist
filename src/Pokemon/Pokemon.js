@@ -12,7 +12,7 @@ const TYPE_COLOR = {
     electric: 'FCBC17',
     fairy: 'F4B1F4',
     fighting:'82351D',
-    fire:'E73B0C',
+    fire:'E73B01',
     flying:'A3B3F7',
     ghost: '6060B2', 
     grass: '74C236',
@@ -49,6 +49,13 @@ export default class Pokemon extends Component {
         },
         height:"",
         weight:'',
+        eggGroup:"",
+        abilities:'',
+        genderRatioMale:"",
+        genderRatioFemale: "",
+        evs:"",
+        shape:"",
+        hatchSteps:'',
     };
 
     async componentDidMount() {
@@ -68,9 +75,10 @@ export default class Pokemon extends Component {
 
         const name = pokemonSpe.data.names.[6].name;
 
-
-       
-       
+        const alternativeName= pokemonRes.data.name;
+        
+        const altImgSprite= pokemonRes.data.sprites.front_default;
+        
       
 
          let {hp, attack, defense, speed, specialAttack, specialDefense} = '';
@@ -113,7 +121,7 @@ export default class Pokemon extends Component {
             .toLowerCase()
             .split('-')
             .map(s => s.charAt(0).toUpperCase() + s.substring(1))
-            .join(' ');
+            .join(', ');
         });
 
         const evs = pokemonRes.data.stats
@@ -139,11 +147,11 @@ export default class Pokemon extends Component {
             res.data.flavor_text_entries.some(flavor => {
                 if (flavor.language.name === 'en') {
                     description = flavor.flavor_text;
-                    return;
                 }
             });
 
             
+            const shape= res.data.shape;
             
             const femaleRate = res.data['gender_rate'];
             const genderRatioFemale = 12.5 * femaleRate;
@@ -151,8 +159,8 @@ export default class Pokemon extends Component {
 
             const catchRate = Math.round((100/255) * res.data['capture_rate']);
             
-            const eggGroups = res.data['egg_groups'].map(groupd => {
-                return groupd.name.toLowerCase()
+            const eggGroups = res.data['egg_groups'].map(group => {
+                return group.name.toLowerCase()
                 .split(' ')
                 .map(s => s.charAt(0).toUpperCase() + s.substring(1))
                 .join(' ');
@@ -168,6 +176,7 @@ export default class Pokemon extends Component {
                 catchRate,
                 eggGroups,
                 hatchSteps,
+                shape,
                 
             });
             
@@ -180,6 +189,8 @@ export default class Pokemon extends Component {
             imageUrl,
             altImg,
             pokemonId,
+            altImgSprite,
+            alternativeName,
             name,
             types,
             stats: {
@@ -194,18 +205,19 @@ export default class Pokemon extends Component {
             weight,
             abilities,
             evs,
-
-
-
-            
+     
         });
         console.log(this.state.altImg)
     }  
     
     render() {
         return (
-            <>
-            <div className="card">
+            <div> 
+                
+                  <div className="card"  >
+             <div className="background_card"></div>
+                
+            
 
                 <div className="thumbnail">
                     <img className="pokemon_image_big" src = {this.state.imageUrl} alt=""/>
@@ -214,7 +226,6 @@ export default class Pokemon extends Component {
                         <div className="right">
 
                                 <h1 className="pokemon_name_info">{this.state.name}</h1>
-                            
                             <div className="type">
                                 {this.state.types.map(type => (
                                     <h2 className="pokemon_type" key ={type} style={{backgroundColor: `#${TYPE_COLOR[type]}`}}>
@@ -222,13 +233,15 @@ export default class Pokemon extends Component {
                                     .split(' ')
                                     .map(s => s.charAt(0).toUpperCase() + s.substring(1))
                                     .join(' ')}
-                                    </h2>
-                                    ))}
+                                    </h2>                                                    ))}
+
                             </div>
 
                                 <div className="separator"></div>
                                 <div className="desc_container">
                                     <p className="pokemon_description">{this.state.description }</p>
+                                    <div className="separator"></div>
+
                                 <div className="icon_container">
                                     <div>{weightIcon}</div>
                                     <h6 className="weight_info">{this.state.weight} Kg</h6>
@@ -247,12 +260,12 @@ export default class Pokemon extends Component {
                         </div>
                              <div>
                                     <Link className="arrow arrow_left" to={`/pokemon/${parseInt(this.state.pokemonId)-1}`}></Link>
-                            </div>
-                            <div>
+                           
                                     <Link className="arrow arrow_right" to={`/pokemon/${parseInt(this.state.pokemonId)+1}`}></Link>
                              </div>
+                </div>
+
             </div>
-            </>
            
         );
     }

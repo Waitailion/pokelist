@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
-import styled from "styled-components";
 import { Link } from "react-router-dom";
-import "./PokeCard.scss"
+import "./PokeCard.scss";
+import pokeball from '../Images/pokeball.gif';
 
 
 
 
-const StyledLink = styled(Link)
-`
-text-decoration:none;
 
-`;
 
 export default class PokeCard extends Component {
     state = {
@@ -30,7 +26,9 @@ export default class PokeCard extends Component {
         this.setState({
             name,
             imageUrl,
-            pokemonId
+            pokemonId,
+            imageLoading: true,
+            toManyRequest: false,
         });
 
     }
@@ -39,11 +37,20 @@ export default class PokeCard extends Component {
 
         return (
 
-        < StyledLink to = { `pokemon/${this.state.pokemonId}` } >
+        <Link to = { `pokemon/${this.state.pokemonId}` } >
       < div className = "card_container" >
          <div className="card_img_container">
+             {this.state.imageLoading ? (
+                 <img src={pokeball} style={{width: '5em'}} className="loading_gif" alt=" "></img>
+             ):null}
             <img className = "card_pokemon_img"
+            onLoad={() => this.setState({imageLoading: false})}
+            onError={() => this.setState({toManyRequest: true})}
             src = { this.state.imageUrl } alt=""/> 
+            {this.state.toManyRequest ? (
+                <h6 className="error_img"><span>To Many Request</span>
+                </h6>
+            ):null}
          </div>
             <div className= "pokemon_card_info"> 
              <h4 className="index_tag">Index</h4>
@@ -60,7 +67,7 @@ export default class PokeCard extends Component {
              </h5> 
             </div>
       </div> 
-        </StyledLink >
+        </Link >
 
         )
     }

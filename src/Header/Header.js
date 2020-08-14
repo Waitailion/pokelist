@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
-import "./header.scss";
-import pokemon from "./pokemon.png";
+import "./Header.scss";
+import pokemon from "../Images/pokemon.png";
 
 
 
