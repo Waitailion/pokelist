@@ -4,6 +4,7 @@ import './Pokemon.scss';
 import { Link} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWeightHanging, faRulerVertical } from '@fortawesome/free-solid-svg-icons'
+import PokeStats from "../PokeStats/PokeStats"
 
 const TYPE_COLOR = {
     bug: 'B1C12E',
@@ -214,7 +215,10 @@ export default class Pokemon extends Component {
         return (
             <div> 
                 
+               
+                
                   <div className="card"  >
+                  <PokeStats stats={this.state.stats}/>
              <div className="background_card"></div>
                 
             
@@ -247,15 +251,8 @@ export default class Pokemon extends Component {
                                     <h6 className="weight_info">{this.state.weight} Kg</h6>
                                     <div>{measureIcon}</div>
                                     <h6 className="height_info">{this.state.height} Meters</h6>
-                                    </div>
                                 </div>
-                                <div className="container_hp" >
-                                <h6 className="stat_name">HP</h6>
-                                <div className="progress1 progress-moved">    
-                                 <div className="progress-bar1" style={{width:`${Math.floor(this.state.stats.hp)}px`}} ></div>
-                                 </div>
-                             </div>
-
+                              
                             <h5 className='pokemon_id_num'>{this.state.pokemonId}</h5>
                         </div>
                              <div>
@@ -263,8 +260,8 @@ export default class Pokemon extends Component {
                            
                                     <Link className="arrow arrow_right" to={`/pokemon/${parseInt(this.state.pokemonId)+1}`}></Link>
                              </div>
+                    </div>
                 </div>
-
             </div>
            
         );

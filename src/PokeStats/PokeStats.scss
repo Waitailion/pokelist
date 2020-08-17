@@ -1,0 +1,151 @@
+
+
+
+.stats_card {
+  display: none;
+    border-radius: 20px;
+    position: absolute;
+    height: 310px;
+    width: 300px;
+    padding: 10px;
+    right:0;
+    background-color: rgb(255, 255, 255);
+  
+    -webkit-box-shadow: 0px 10px 13px 7px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 10px 13px 7px rgba(0,0,0,0.75);
+box-shadow: 0px 10px 13px 7px rgba(0,0,0,0.75);
+}
+ 
+.container_stat {
+  width: 257px;
+margin-left: 20px;  
+color: #4B4B4B;
+}
+
+.stat_name {
+  font-size: 20px;
+  font-weight: 400;
+margin-bottom: 0px;
+margin-top:10px;
+}
+
+
+
+.progress-bar {
+  height: 15px;
+
+  background-image: 
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  transition: 0.1s linear;  
+  transition-property: width, background-color;    
+  
+}
+
+.progress {
+  background: rgba(0, 0, 0, 0.25);  
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 1), 0 1px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 1), 0 1px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 1), 0 1px rgba(0, 0, 0, 1);
+}
+
+.progress-moved .progress-bar {
+  width: 85%; 
+  background-color: #EF476F;  
+  animation: progress1Animation 2s;
+
+}
+
+
+
+.progress-moved1 .progress-bar {
+  width: 85%; 
+  background-color: #f00c0c;  
+  animation: progress1Animation 2s;
+
+}
+
+
+
+
+.progress-moved2 .progress-bar {
+  width: 85%; 
+  background-color: #656b6b;  
+  animation: progress1Animation 2s;
+
+}
+
+
+.progress-moved3 .progress-bar {
+  width: 85%; 
+  background-color: #e1f71d;  
+  animation: progress1Animation 2s;
+
+}
+
+
+
+.progress-moved4 .progress-bar {
+  width: 85%; 
+  background-color: #9547ef;  
+  animation: progress1Animation 2s;
+
+}
+
+
+.progress-moved5 .progress-bar {
+  width: 85%; 
+  background-color: #418b46;  
+  animation: progress1Animation 2s;
+
+}
+
+
+
+@keyframes progress1Animation {
+  0%   { width: 5%; background-color: #F9BCCA;}
+  100% { width: 85%; background-color: #EF476F; }
+}
+@keyframes progress2Animation {
+  0%   { width: 5%; background-color: #F9BCCA;}
+  100% { width: 85%; background-color: #9547ef; }
+}
+@keyframes progress3Animation {
+  0%   { width: 5%; background-color: #F9BCCA;}
+  100% { width: 85%; background-color:#4cd964 ; }
+}
+
+$green: #4cd964;
+$turquoise: #5ac8fa;
+$blue: #007aff;
+$light-blue: #7DC8E8;
+$purple: #5856d6;
+$red: #ff2d55;
+
+
+@keyframes colorAnimation {
+  0% { 
+    background-image: 
+    linear-gradient(to right, $green, $turquoise, $blue, $light-blue, $purple, $red);
+  }
+  20% { 
+    background-image: 
+    linear-gradient(to right, $turquoise, $blue, $light-blue, $purple, $red, $green);
+  }
+  40% { 
+    background-image: 
+    linear-gradient(to right, $blue, $light-blue, $purple, $red, $green, $turquoise);
+  }
+  60% { 
+    background-image: 
+    linear-gradient(to right, $light-blue, $purple, $red, $green, $turquoise, $blue);
+  }
+  100% { 
+    background-image: 
+    linear-gradient(to right, $purple, $red, $green, $turquoise, $blue, $light-blue);
+  }
+}
+
+
+
+
+

@@ -6,6 +6,7 @@ import "./PokeList.scss";
 
 
 
+
 export default class PokeList extends Component {
  
 
@@ -25,6 +26,10 @@ export default class PokeList extends Component {
         const res = await axios.get(this.state.url);
         this.setState({pokemon: res.data[`results`]});
     
+
+
+
+        
     }
  
 
@@ -32,8 +37,7 @@ export default class PokeList extends Component {
 render() {
     return(
         <React.Fragment>
-            
-            {this.state.pokemon ? (
+         {this.state.pokemon ? (
                 
                 <div className="all_cards">
                 {this.state.pokemon.map(pokemon => (
@@ -49,7 +53,7 @@ render() {
                 <div>
                 <h1 className="loading_title">Loading Pokemon</h1>
                 </div>
-                )}
+            )}
            
         </React.Fragment>
         
