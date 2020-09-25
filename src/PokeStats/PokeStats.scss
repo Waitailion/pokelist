@@ -2,20 +2,24 @@
 
 
 .stats_card {
-  display: none;
     border-radius: 20px;
     position: absolute;
-    height: 310px;
+    height: 330px;
     width: 300px;
     padding: 10px;
-    right:0;
-    background-color: rgb(255, 255, 255);
-  
+    right: -150px;
+    top:-50px;
+    background-color: rgba(255, 255, 255, 0.95);
+  display:none;
     -webkit-box-shadow: 0px 10px 13px 7px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 10px 13px 7px rgba(0,0,0,0.75);
 box-shadow: 0px 10px 13px 7px rgba(0,0,0,0.75);
+
+   
+
 }
  
+
 .container_stat {
   width: 257px;
 margin-left: 20px;  
@@ -42,6 +46,7 @@ margin-top:10px;
 }
 
 .progress {
+  margin-top: 5px;
   background: rgba(0, 0, 0, 0.25);  
   box-shadow: inset 0 2px 2px rgba(0, 0, 0, 1), 0 1px rgba(0, 0, 0, 1);
   -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 1), 0 1px rgba(0, 0, 0, 1);
@@ -49,8 +54,7 @@ margin-top:10px;
 }
 
 .progress-moved .progress-bar {
-  width: 85%; 
-  background-color: #EF476F;  
+  background-color: #eb7591;  
   animation: progress1Animation 2s;
 
 }
@@ -58,8 +62,7 @@ margin-top:10px;
 
 
 .progress-moved1 .progress-bar {
-  width: 85%; 
-  background-color: #f00c0c;  
+  background-color: #1d1b1c;  
   animation: progress1Animation 2s;
 
 }
@@ -68,16 +71,14 @@ margin-top:10px;
 
 
 .progress-moved2 .progress-bar {
-  width: 85%; 
-  background-color: #656b6b;  
+  background-color: #a6d6d6;  
   animation: progress1Animation 2s;
 
 }
 
 
 .progress-moved3 .progress-bar {
-  width: 85%; 
-  background-color: #e1f71d;  
+  background-color: #dfe988;  
   animation: progress1Animation 2s;
 
 }
@@ -85,16 +86,14 @@ margin-top:10px;
 
 
 .progress-moved4 .progress-bar {
-  width: 85%; 
-  background-color: #9547ef;  
+  background-color: #c09de9;  
   animation: progress1Animation 2s;
 
 }
 
 
 .progress-moved5 .progress-bar {
-  width: 85%; 
-  background-color: #418b46;  
+  background-color: #a7e0ab;  
   animation: progress1Animation 2s;
 
 }
@@ -103,49 +102,11 @@ margin-top:10px;
 
 @keyframes progress1Animation {
   0%   { width: 5%; background-color: #F9BCCA;}
-  100% { width: 85%; background-color: #EF476F; }
+
+  25%   { width: 25%; background-color: #F9BCCA;}
+
+  50%   { width: 100%; background-color: #F9BCCA;}
+
+  100%   { width: 25%; background-color: #F9BCCA;}
 }
-@keyframes progress2Animation {
-  0%   { width: 5%; background-color: #F9BCCA;}
-  100% { width: 85%; background-color: #9547ef; }
-}
-@keyframes progress3Animation {
-  0%   { width: 5%; background-color: #F9BCCA;}
-  100% { width: 85%; background-color:#4cd964 ; }
-}
-
-$green: #4cd964;
-$turquoise: #5ac8fa;
-$blue: #007aff;
-$light-blue: #7DC8E8;
-$purple: #5856d6;
-$red: #ff2d55;
-
-
-@keyframes colorAnimation {
-  0% { 
-    background-image: 
-    linear-gradient(to right, $green, $turquoise, $blue, $light-blue, $purple, $red);
-  }
-  20% { 
-    background-image: 
-    linear-gradient(to right, $turquoise, $blue, $light-blue, $purple, $red, $green);
-  }
-  40% { 
-    background-image: 
-    linear-gradient(to right, $blue, $light-blue, $purple, $red, $green, $turquoise);
-  }
-  60% { 
-    background-image: 
-    linear-gradient(to right, $light-blue, $purple, $red, $green, $turquoise, $blue);
-  }
-  100% { 
-    background-image: 
-    linear-gradient(to right, $purple, $red, $green, $turquoise, $blue, $light-blue);
-  }
-}
-
-
-
-
 

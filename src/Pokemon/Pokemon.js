@@ -5,6 +5,7 @@ import { Link} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWeightHanging, faRulerVertical } from '@fortawesome/free-solid-svg-icons'
 import PokeStats from "../PokeStats/PokeStats"
+import ExtraInfo from "../ExtraInfo/ExtraInfo"
 
 const TYPE_COLOR = {
     bug: 'B1C12E',
@@ -218,8 +219,9 @@ export default class Pokemon extends Component {
                
                 
                   <div className="card"  >
-                  <PokeStats stats={this.state.stats}/>
-             <div className="background_card"></div>
+                      <ExtraInfo  className="extra_info" info={this.state}/>
+                     <PokeStats stats={this.state.stats}/>
+                <div className="background_card"></div>
                 
             
 
@@ -252,6 +254,7 @@ export default class Pokemon extends Component {
                                     <div>{measureIcon}</div>
                                     <h6 className="height_info">{this.state.height} Meters</h6>
                                 </div>
+                            
                               
                             <h5 className='pokemon_id_num'>{this.state.pokemonId}</h5>
                         </div>

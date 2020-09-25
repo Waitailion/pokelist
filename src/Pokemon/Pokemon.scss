@@ -19,15 +19,9 @@
   box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
 
 }
-.card:hover {
-  .stats_card {
-    display: block;
 
-  z-index: 100;
-  
-  }
 
-}
+
 .thumbnail {
   float: left;
   position: relative;
@@ -140,32 +134,61 @@
 
 
 
+.card:hover {
+  .stats_card  {
+    display: block;
+    -webkit-animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
-.arrow {
-	position: absolute;
-  top: 45%;
- 
-	width: 50px;
-	height: 50px;
-	background: transparent;
-	border-top: 5px solid #4B4B4B;
-	border-right: 5px solid #4B4B4B;
-	box-shadow: 0 5px -5px lightgray;
-	transition: all 200ms ease;
-	
-	&.arrow_left {
-		left: -150px;
-		transform: translate3d(0,-50%,0) rotate(-135deg);
-	}
-
-	&.arrow_right {
-		right: -150px;
-		transform: translate3d(0,-50%,0) rotate(45deg);
-	}
-	
-	&:hover {
-		border-color: #9547ef;
-		box-shadow: 5px -5px 0 #4B4B4B;
-	}
-	
+  }
+  @-webkit-keyframes slide-left {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    
+    100% {
+      -webkit-transform: translateX(-100px);
+              transform: translateX(-100px);
+    }
+  }
+  @keyframes slide-left {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(-100px);
+              transform: translateX(-100px);
+    }
+  }
 }
+
+        .arrow {
+          position: absolute;
+          top: 45%;
+        
+          width: 50px;
+          height: 50px;
+          background: transparent;
+          border-top: 5px solid #4B4B4B;
+          border-right: 5px solid #4B4B4B;
+          box-shadow: 0 5px -5px lightgray;
+          transition: all 200ms ease;
+          
+          &.arrow_left {
+            left: -150px;
+            transform: translate3d(0,-50%,0) rotate(-135deg);
+          }
+
+          &.arrow_right {
+            right: -150px;
+            transform: translate3d(0,-50%,0) rotate(45deg);
+          }
+          
+          &:hover {
+            border-color: #9547ef;
+            box-shadow: 5px -5px 0 #4B4B4B;
+          }
+          
+        }
