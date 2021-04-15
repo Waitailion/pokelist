@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/pokelist/static/css/main.a7adeacd.chunk.css",
+    "main.css": "/pokelist/static/css/main.3fa5efa2.chunk.css",
     "main.js": "/pokelist/static/js/main.2de47ec4.chunk.js",
     "main.js.map": "/pokelist/static/js/main.2de47ec4.chunk.js.map",
     "runtime-main.js": "/pokelist/static/js/runtime-main.6448120e.js",
@@ -8,9 +8,9 @@
     "static/js/2.5db98fbc.chunk.js": "/pokelist/static/js/2.5db98fbc.chunk.js",
     "static/js/2.5db98fbc.chunk.js.map": "/pokelist/static/js/2.5db98fbc.chunk.js.map",
     "index.html": "/pokelist/index.html",
-    "precache-manifest.a35ae0c50a9f9b923c65259aec0622c5.js": "/pokelist/precache-manifest.a35ae0c50a9f9b923c65259aec0622c5.js",
+    "precache-manifest.63d832de928e3219d170599263182a24.js": "/pokelist/precache-manifest.63d832de928e3219d170599263182a24.js",
     "service-worker.js": "/pokelist/service-worker.js",
-    "static/css/main.a7adeacd.chunk.css.map": "/pokelist/static/css/main.a7adeacd.chunk.css.map",
+    "static/css/main.3fa5efa2.chunk.css.map": "/pokelist/static/css/main.3fa5efa2.chunk.css.map",
     "static/js/2.5db98fbc.chunk.js.LICENSE.txt": "/pokelist/static/js/2.5db98fbc.chunk.js.LICENSE.txt",
     "static/media/App.css": "/pokelist/static/media/pokeback3.3c3b6cde.png",
     "static/media/pokeball.gif": "/pokelist/static/media/pokeball.66fb6272.gif",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.6448120e.js",
     "static/js/2.5db98fbc.chunk.js",
-    "static/css/main.a7adeacd.chunk.css",
+    "static/css/main.3fa5efa2.chunk.css",
     "static/js/main.2de47ec4.chunk.js"
   ]
 }
